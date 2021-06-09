@@ -116,14 +116,11 @@ fi
 # Use glibcxx_compiler_pic_flag to designate a compile-time flags for
 # creating position-independent objects. This varies with the target
 # hardware and operating system, but is often: -DPIC -fPIC.
+glibcxx_lt_pic_flag="-prefer-pic"
+glibcxx_compiler_pic_flag="$lt_prog_compiler_pic_CXX"
 if test "$enable_shared" = yes; then
-  glibcxx_lt_pic_flag="-prefer-pic"
-  glibcxx_compiler_pic_flag="$lt_prog_compiler_pic_CXX"
   glibcxx_compiler_shared_flag="-D_GLIBCXX_SHARED"
-
 else
-  glibcxx_lt_pic_flag=
-  glibcxx_compiler_pic_flag=
   glibcxx_compiler_shared_flag=
 fi
 AC_SUBST(glibcxx_lt_pic_flag)
