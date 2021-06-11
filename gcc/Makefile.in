@@ -2930,13 +2930,13 @@ build/gencfn-macros$(build_exeext) : build/hash-table.o build/vec.o \
 # For stage1 and when cross-compiling use the build libcpp which is
 # built with NLS disabled.  For stage2+ use the host library and
 # its dependencies.
-ifeq ($(build_objdir),$(build_libobjdir))
-BUILD_CPPLIB = $(build_libobjdir)/libcpp/libcpp.a
-else
+#ifeq ($(build_objdir),$(build_libobjdir))
+#BUILD_CPPLIB = $(build_libobjdir)/libcpp/libcpp.a
+#else
 BUILD_CPPLIB = $(CPPLIB) $(LIBIBERTY)
 build/genmatch$(build_exeext): BUILD_LIBDEPS += $(LIBINTL_DEP) $(LIBICONV_DEP)
 build/genmatch$(build_exeext): BUILD_LIBS += $(LIBINTL) $(LIBICONV)
-endif
+#endif
 
 build/genmatch$(build_exeext) : $(BUILD_CPPLIB) \
   $(BUILD_ERRORS) build/vec.o build/hash-table.o build/sort.o
